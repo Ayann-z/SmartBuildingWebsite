@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+BIM建筑数字健康诊断
+</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+
+<script src="./node_modules/chart.js/dist/chart.umd.js"></script>
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+
+<div class="logo">
+
+🏥 建筑数字健康诊断中心
+
+<p>
+BIM模型 · 构件识别 · 智能诊断 · 改造决策
+</p>
+
+</div>
+
+
+<nav>
+
+
+<span onclick="location.href='index.html'">
+首页
+</span>
+
+
+<span class="active">
+数字诊断
+</span>
+
+
+<span onclick="location.href='optimization.html'">
+改造优化
+</span>
+
+
+<span onclick="location.href='energy.html'">
+能源调度
+</span>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<div class="diagnosis-layout">
+
+
+
+<!-- 左侧 -->
+
+
+<div class="panel component-panel">
+
+
+<h2>
+BIM构件
+</h2>
+
+
+<div class="component"
+
+onclick="roof()">
+
+01 屋顶系统
+
+</div>
+
+
+<div class="component"
+
+onclick="structure()">
+
+02 结构体系
+
+</div>
+
+
+<div class="component"
+
+onclick="wall()">
+
+03 外墙系统
+
+</div>
+
+
+
+<div class="component"
+
+onclick="wallInside()">
+
+04 室内空间
+
+</div>
+
+
+
+<div class="component"
+
+onclick="machine()">
+
+05 机电管线
+
+</div>
+
+
+
+<div class="component"
+
+onclick="foundation()">
+
+06 基础结构
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- 中间BIM -->
+
+
+<div class="panel bim-panel">
+
+
+<h1>
+建筑BIM解构模型
+</h1>
+<div class="bim-container">
+
+
+<img src="images/bim.png">
+
+
+<svg 
+class="bim-map"
+viewBox="0 0 1000 1600"
+>
+
+
+<!-- 屋顶 -->
+<polygon
+points="
+180,80
+650,80
+780,180
+260,220
+"
+onclick="roof()"
+/>
+
+
+
+<!-- 结构体系 -->
+
+<polygon
+points="
+170,250
+700,260
+720,500
+180,480
+"
+onclick="structure()"
+/>
+
+
+
+
+<!-- 外墙 -->
+
+<polygon
+points="
+120,530
+720,540
+720,820
+130,820
+"
+onclick="wall()"
+/>
+
+
+
+
+
+<!-- 室内 -->
+
+<polygon
+points="
+150,850
+700,850
+700,1050
+150,1050
+"
+onclick="wallInside()"
+/>
+
+
+
+
+
+
+<!-- 机电 -->
+
+<polygon
+points="
+150,1080
+720,1080
+720,1300
+150,1300
+"
+onclick="machine()"
+/>
+
+
+
+
+
+<!-- 基础 -->
+
+<polygon
+points="
+120,1350
+720,1350
+720,1550
+120,1550
+"
+onclick="foundation()"
+/>
+
+
+
+</svg>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 右侧 -->
+
+
+<div class="panel result-panel">
+
+
+<h2 id="part">
+
+请选择构件
+
+</h2>
+
+
+<div class="score-box">
+
+
+<span id="score">
+
+--
+
+</span>
+
+分
+
+
+</div>
+
+
+
+<div id="risk">
+
+等待检测
+
+</div>
+
+
+
+
+<div class="info-box">
+
+
+<h3>
+检测结果
+</h3>
+
+
+<p id="problem">
+
+--
+
+</p>
+
+
+<h3>
+改造建议
+</h3>
+
+
+<p id="solution">
+
+--
+
+</p>
+
+
+</div>
+
+
+
+<canvas id="radar"></canvas>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+<script src="js/diagnosis.js"></script>
+
+
+</body>
+
+
+</html>

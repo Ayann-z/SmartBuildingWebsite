@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+源-储-荷智能能源调度中心
+</title>
+
+<link rel="stylesheet" href="css/energy.css">
+</head>
+
+
+<body>
+
+
+<!-- 顶部 -->
+
+<header>
+
+
+<div class="title">
+
+⚡ 源-储-荷智能能源调度中心
+
+<p>
+光伏发电 · 储能管理 · 建筑负荷 · 智能控制
+</p>
+
+
+</div>
+
+
+
+<nav>
+
+
+<span onclick="goPage('index.html')">
+
+首页
+
+</span>
+
+
+
+<span onclick="goPage('diagnosis.html')">
+
+数字诊断
+
+</span>
+
+
+
+<span onclick="goPage('optimization.html')">
+
+改造优化
+
+</span>
+
+
+
+<span class="active">
+
+能源调度
+
+</span>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+<!-- 主区域 -->
+
+<div class="main">
+
+
+
+<!-- 左侧 -->
+
+
+<div class="panel device">
+
+
+<h2>
+⚙ 能源设备
+</h2>
+
+
+
+<button id="pvBtn">
+
+☀
+
+建筑光伏系统
+
+</button>
+
+
+
+<button id="batteryBtn">
+
+🔋
+
+储能系统
+
+</button>
+
+
+
+
+<button id="loadBtn">
+
+🏠
+
+建筑负荷
+
+</button>
+
+
+
+
+<button id="hvacBtn">
+
+❄
+
+HVAC系统
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 中间 -->
+
+
+<div class="panel flow">
+
+
+<h2>
+
+能源流动模型
+
+</h2>
+
+
+
+
+<div class="nodes">
+
+
+<div class="node pv">
+
+
+☀ 光伏
+
+
+<strong id="pvPower">
+
+0 kW
+
+</strong>
+
+
+</div>
+
+
+
+<div class="line">
+
+→
+
+</div>
+
+
+
+<div class="node battery">
+
+
+🔋 储能
+
+
+<strong id="batterySOC">
+
+SOC 80%
+
+</strong>
+
+
+</div>
+
+
+
+
+<div class="line">
+
+→
+
+</div>
+
+
+
+
+<div class="node building">
+
+
+🏠 建筑
+
+
+<strong id="buildingLoad">
+
+20 kW
+
+</strong>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<h3 id="strategy">
+
+系统启动中...
+
+</h3>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 右侧 -->
+
+
+<div class="panel monitor">
+
+
+<h2>
+
+实时监控
+
+</h2>
+
+
+
+<h3>
+今日光伏发电
+</h3>
+
+<div id="pvTotal">
+
+0 kWh
+
+</div>
+
+
+
+<h3>
+储能SOC
+</h3>
+
+<div id="socTotal">
+
+80%
+
+</div>
+
+
+
+<h3>
+当前建筑负荷
+</h3>
+
+
+<div id="loadTotal">
+
+20 kW
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- 曲线 -->
+
+<div class="panel chart">
+
+
+<h2>
+
+24小时能源运行曲线
+
+</h2>
+
+
+
+<canvas id="energyChart"></canvas>
+
+
+
+<div class="time">
+
+
+当前时间：
+
+<span id="clock">
+
+06:00
+
+</span>
+
+
+<br>
+
+
+<input
+
+id="timeSlider"
+
+type="range"
+
+min="0"
+
+max="24"
+
+value="6"
+
+>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function goPage(page){
+
+window.location.href = page;
+
+}
+
+
+</script>
+
+
+<script src="js/energy.js"></script>
+</body>
+
+
+</html>
